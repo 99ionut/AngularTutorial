@@ -7,7 +7,8 @@ import { WishItem } from '../shared/models/wishItem';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  items = [
+  //can be :any or other types, in this case WishItem array
+  items : WishItem[] = [
     new WishItem("to learn Angular"),
     new WishItem("get coffe",true),
     new WishItem("grasss")

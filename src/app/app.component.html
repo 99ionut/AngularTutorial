@@ -1,5 +1,48 @@
 <div class="container">
-  <div *ngFor="let item of items">
-    {{item.wishText}}
+
+  <!--Approach 1 of conditional rendering-->
+  <!--ngIf to display if there are no elements-->
+  <h1>approach 1</h1>
+  <div *ngIf="items.length == 0">
+    There are no wishes
   </div>
+
+  <!--there is no ngElse, so another inverted ngIf to display if there are elements-->
+  <ul *ngIf="items.length > 0" id="list">
+    <li *ngFor="let item of items">
+        <input type="checkbox"> {{item.wishText}}
+    </li>
+  </ul>
+
+  <!--Approach 2 of conditional rendering, templates-->
+  <h1>approach 2</h1>
+  <div *ngIf="items.length===0; then noItems else showItems"></div>
+
+  <ng-template #noItems>
+    There are no wishes
+  </ng-template>
+
+  <ng-template #showItems>
+    <ul *ngIf="items.length > 0" id="list">
+      <li *ngFor="let item of items">
+          <input type="checkbox"> {{item.wishText}}
+      </li>
+    </ul>
+  </ng-template>
+
+  <!--Approach 3 of conditional rendering, template only for the else-->
+  <h1>approach 3</h1>
+  <div *ngIf="items.length===0; else showItems">
+    There are no wishes
+  </div>
+
+  <ng-template #showItems>
+    <ul *ngIf="items.length > 0" id="list">
+      <li *ngFor="let item of items">
+          <input type="checkbox"> {{item.wishText}}
+      </li>
+    </ul>
+  </ng-template>
+
+  <!--cant have more than one directive on an element, so no ngIf with ngFor-->
 </div>
