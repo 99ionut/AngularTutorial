@@ -1,20 +1,34 @@
 <div class="container">
 
+  <!--2nd approach to reactive forms, template driven forms-->
+  <form action="">
+    <div>
+      <!--ngModel binds form field to a proprety in our class-->
+      <input type="text" name="wishName"  [(ngModel)]="newWishText">
+    </div>
+    <div>
+      <button type="submit"
+      (click)="$event.preventDefault(); addNewWish()"
+      >Add Wish</button>
+    </div>
+  </form>
+
+
   <!--Approach 1 of conditional rendering-->
-  <!--ngIf to display if there are no elements-->
+  <!--ngIf to display if there are no elements
   <h1>approach 1</h1>
   <div *ngIf="items.length == 0">
     There are no wishes
-  </div>
+  </div>-->
 
-  <!--there is no ngElse, so another inverted ngIf to display if there are elements-->
+  <!--there is no ngElse, so another inverted ngIf to display if there are elements
   <ul *ngIf="items.length > 0" id="list">
     <li *ngFor="let item of items">
         <input type="checkbox"> {{item.wishText}}
     </li>
-  </ul>
+  </ul>-->
 
-  <!--Approach 2 of conditional rendering, templates-->
+  <!--Approach 2 of conditional rendering, templates
   <h1>approach 2</h1>
   <div *ngIf="items.length===0; then noItems else showItems"></div>
 
@@ -29,6 +43,7 @@
       </li>
     </ul>
   </ng-template>
+  -->
 
   <!--Approach 3 of conditional rendering, template only for the else-->
   <h1>approach 333</h1>

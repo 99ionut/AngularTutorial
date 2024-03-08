@@ -13,6 +13,9 @@ export class AppComponent {
     new WishItem("get coffe",true),
     new WishItem("grasss")
   ]
+
+  newWishText = "";
+
   title = 'ssswishlist';
 
    toggleItem = (e : any, item : WishItem) =>{
@@ -21,5 +24,12 @@ export class AppComponent {
     console.log(e);
     console.log(item);
     console.log("Toggle!");
+  }
+
+  addNewWish = () =>{
+    //add wish
+    this.items.push(new WishItem(this.newWishText));
+    //clear textbox so it becomes blank after an input so user has to retype
+    this.newWishText = "";
   }
 }
