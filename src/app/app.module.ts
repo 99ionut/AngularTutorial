@@ -4,11 +4,13 @@ import { BrowserModule, provideClientHydration } from '@angular/platform-browser
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
+import { WishListComponent } from './wish-list/wish-list.component';
 
 @NgModule({
   //components / directives that belong to this model
   declarations: [
-    AppComponent
+    AppComponent,
+    WishListComponent
   ],
   //things avabile to the templates inside of this module
   imports: [

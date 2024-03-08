@@ -1,0 +1,18 @@
+<div *ngIf="wishes.length===0; else showItems2">
+  There are no wishes
+</div>
+
+<ng-template #showItems2>
+  <ul id="list">
+    <li *ngFor="let item of wishes; index as iii">
+        <!--data binding [html proprety or attribute]="value"-->
+        <!--event binding have to call a method in the class-->
+        <!--$event to pass event usually (e) in normal js-->
+        <input type="checkbox" 
+        [checked]="item.isComplete" 
+        [attr.data-index]="iii"
+        (click)="toggleItem($event, item)"
+        >{{item.wishText}}
+    </li>
+  </ul>
+</ng-template>

@@ -26,26 +26,11 @@
     </select>
   </div>
 
-  <!--Approach 3 of conditional rendering, template only for the else-->
-  <h1>approach 333</h1>
-  <div *ngIf="visibleItems.length===0; else showItems2">
-    There are no wishes
-  </div>
+  <div>
+    <wish-list [wishes]="visibleItems">
 
-  <ng-template #showItems2>
-    <ul *ngIf="items.length > 0" id="list">
-      <li *ngFor="let item of visibleItems; index as iii">
-          <!--data binding [html proprety or attribute]="value"-->
-          <!--event binding have to call a method in the class-->
-          <!--$event to pass event usually (e) in normal js-->
-          <input type="checkbox" 
-          [checked]="item.isComplete" 
-          [attr.data-index]="iii"
-          (click)="toggleItem($event, item)"
-          >{{item.wishText}}
-      </li>
-    </ul>
-  </ng-template>
+    </wish-list>
+  </div>
 
   <!--cant have more than one directive on an element, so no ngIf with ngFor-->
 
