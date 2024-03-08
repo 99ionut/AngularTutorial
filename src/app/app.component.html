@@ -19,7 +19,7 @@
   <div>
     <span>filter</span>
     <!--ngModel on change, pass the new val to function that triggers on change by passing $event-->
-    <select name="listFIler" id="" [(ngModel)]="listFilter" (ngModelChange)="filterChanged($event)">
+    <select name="listFIler" id="" [(ngModel)]="listFilter" >
       <option value="0">All</option>
       <option value="1">Unfulfilled</option>
       <option value="2">Fulfilled</option>

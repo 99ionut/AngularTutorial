@@ -17,10 +17,20 @@ export class AppComponent {
   newWishText = "";
 
   title = 'ssswishlist';
-
   //used for filters
   listFilter : String = "0";
-  visibleItems : WishItem[] = this.items;
+  //The get syntax binds an object property to a function that will be called when that property is looked up
+  get visibleItems() : WishItem[] {
+    let value = this.listFilter;
+
+    if(value == "0"){
+      return this.items;
+    }else if(value == "1"){
+      return this.items.filter(item => !item.isComplete);
+    }else{
+      return this.items.filter(item => item.isComplete);
+    }
+  }
 
   toggleItem = (e : any, item : WishItem) =>{
     //binds data by setting isCompleto to true or false
@@ -30,16 +40,6 @@ export class AppComponent {
     console.log("Toggle!");
   }
 
-  filterChanged = (value : any) =>{
-    console.log(value);
-    if(value == "0"){
-      this.visibleItems = this.items;
-    }else if(value == "1"){
-      this.visibleItems = this.items.filter(item => !item.isComplete);
-    }else if(value == "2"){
-      this.visibleItems = this.items.filter(item => item.isComplete);
-    }
-  }
 
   addNewWish = () =>{
     //add wish
