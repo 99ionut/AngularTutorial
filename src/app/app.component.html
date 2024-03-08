@@ -40,7 +40,13 @@
     <ul *ngIf="items.length > 0" id="list">
       <li *ngFor="let item of items; index as iii">
           <!--data binding [html proprety or attribute]="value"-->
-          <input type="checkbox" [checked]="item.isComplete" [attr.data-index]="iii">{{item.wishText}}
+          <!--event binding have to call a method in the class-->
+          <!--$event to pass event usually (e) in normal js-->
+          <input type="checkbox" 
+          [checked]="item.isComplete" 
+          [attr.data-index]="iii"
+          (click)="toggleItem($event, item)"
+          >{{item.wishText}}
       </li>
     </ul>
   </ng-template>
