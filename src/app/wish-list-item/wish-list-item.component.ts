@@ -1,6 +1,5 @@
-import { Component, Input, Output } from '@angular/core';
+import { Component, Input, Output, EventEmitter } from '@angular/core';
 import { WishItem } from '../../shared/models/wishItem';
-import { EventEmitter } from 'stream';
 
 @Component({
   selector: 'wish-list-item',
@@ -9,8 +8,15 @@ import { EventEmitter } from 'stream';
 })
 export class WishListItemComponent {
   @Input() wishText! : string;
-@Input() fullfilled! : boolean;
-@Output() fullfilledChange = new EventEmitter<boolean>();
+  @Input() fullfilled! : boolean;
+  //must be name of input followed by "Change"
+  @Output() fullfilledChange = new EventEmitter<boolean>();
+
+  getClasses = () =>{
+    //return this.fullfilled ? ['strikeout','text-muted'] : [''];
+    //or return an object based on the values
+    return {'strikeout text-muted': this.fullfilled}
+  }
 
   toggleFullfilled = () =>{
     //binds data by setting isCompleto to true or false
