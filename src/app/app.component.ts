@@ -14,7 +14,7 @@ export class AppComponent {
     new WishItem("grasss")
   ]
 
-  newWishText = "";
+  
 
   title = 'ssswishlist';
   //used for filters
@@ -32,11 +32,4 @@ export class AppComponent {
     }
   }
 
-
-  addNewWish = () =>{
-    //add wish
-    this.items.push(new WishItem(this.newWishText));
-    //clear textbox so it becomes blank after an input so user has to retype
-    this.newWishText = "";
-  }
 }

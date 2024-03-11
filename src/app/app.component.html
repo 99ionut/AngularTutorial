@@ -3,17 +3,10 @@
   <!--2nd approach to reactive forms, template driven forms-->
   <h1>{{title}}</h1>
 
-  <form action="">
-    <div>
-      <!--ngModel binds form field to a proprety in our class-->
-      <input type="text" name="wishName"  [(ngModel)]="newWishText">
-    </div>
-    <div>
-      <button type="submit"
-      (click)="$event.preventDefault(); addNewWish()"
-      >Add Wish</button>
-    </div>
-  </form>
+<add-wish-form
+   (addWish)="items.push($event)"
+>
+</add-wish-form>
 
   <!--ngModel listen to change-->
   <div>

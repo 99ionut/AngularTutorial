@@ -5,12 +5,14 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { WishListComponent } from './wish-list/wish-list.component';
+import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
 
 @NgModule({
   //components / directives that belong to this model
   declarations: [
     AppComponent,
-    WishListComponent
+    WishListComponent,
+    AddWishFormComponent
   ],
   //things avabile to the templates inside of this module
   imports: [
