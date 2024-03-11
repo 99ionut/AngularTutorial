@@ -6,13 +6,15 @@ import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
+import { WishFilterComponent } from './wish-filter/wish-filter.component';
 
 @NgModule({
   //components / directives that belong to this model
   declarations: [
     AppComponent,
     WishListComponent,
-    AddWishFormComponent
+    AddWishFormComponent,
+    WishFilterComponent
   ],
   //things avabile to the templates inside of this module
   imports: [

@@ -3,6 +3,7 @@
   <!--2nd approach to reactive forms, template driven forms-->
   <h1>{{title}}</h1>
 
+  <!--listen for event, then do items.push-->
 <add-wish-form
    (addWish)="items.push($event)"
 >
@@ -10,17 +11,15 @@
 
   <!--ngModel listen to change-->
   <div>
-    <span>filter</span>
-    <!--ngModel on change, pass the new val to function that triggers on change by passing $event-->
-    <select name="listFIler" id="" [(ngModel)]="listFilter" >
-      <option value="0">All</option>
-      <option value="1">Unfulfilled</option>
-      <option value="2">Fulfilled</option>
-    </select>
+    <!--listen for filter vevent-->
+    <wish-filter
+      (filter)="filter = $event"
+    >
+    </wish-filter>
   </div>
 
   <div>
-    <wish-list [wishes]="visibleItems">
+    <wish-list [wishes]="items.filter(filter)">
 
     </wish-list>
   </div>

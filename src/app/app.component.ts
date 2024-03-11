@@ -14,22 +14,9 @@ export class AppComponent {
     new WishItem("grasss")
   ]
 
-  
-
   title = 'ssswishlist';
-  //used for filters
-  listFilter : String = "0";
-  //The get syntax binds an object property to a function that will be called when that property is looked up
-  get visibleItems() : WishItem[] {
-    let value = this.listFilter;
 
-    if(value == "0"){
-      return this.items;
-    }else if(value == "1"){
-      return this.items.filter(item => !item.isComplete);
-    }else{
-      return this.items.filter(item => item.isComplete);
-    }
+  filter: any = () =>{
+
   }
-
 }
