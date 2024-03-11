@@ -8,24 +8,20 @@ import events from "../../shared/services/EventService";
   styleUrl: './wish-list-item.component.css'
 })
 export class WishListItemComponent {
-  @Input() wishText! : string;
-  @Input() fullfilled! : boolean;
-  //must be name of input followed by "Change"
-  @Output() fullfilledChange = new EventEmitter<boolean>();
+  @Input() wish! : WishItem;
+
 
   getClasses = () =>{
     //return this.fullfilled ? ['strikeout','text-muted'] : [''];
     //or return an object based on the values
-    return {'strikeout text-muted': this.fullfilled}
+    return {'strikeout text-muted': this.wish.isComplete}
   }
 
   removeWish(){
-    events.emit("removeWish", this.wishText);
+    events.emit("removeWish", this.wish);
   }
 
   toggleFullfilled = () =>{
-    //binds data by setting isCompleto to true or false
-    this.fullfilled = !this.fullfilled;
-    this.fullfilledChange.emit(this.fullfilled);
+    
   }
 }
