@@ -16,7 +16,5 @@ export class AppComponent {
 
   title = 'ssswishlist';
 
-  filter: any = () =>{
-
-  }
+  filter: any;
 }

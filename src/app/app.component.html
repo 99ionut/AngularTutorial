@@ -9,11 +9,10 @@
 >
 </add-wish-form>
 
-  <!--ngModel listen to change-->
   <div>
     <!--listen for filter vevent-->
     <wish-filter
-      (filter)="filter = $event"
+      [(filter)]="filter"
     >
     </wish-filter>
   </div>
