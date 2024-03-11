@@ -7,6 +7,7 @@ import { FormsModule } from '@angular/forms';
 import { WishListComponent } from './wish-list/wish-list.component';
 import { AddWishFormComponent } from './add-wish-form/add-wish-form.component';
 import { WishFilterComponent } from './wish-filter/wish-filter.component';
+import { WishListItemComponent } from './wish-list-item/wish-list-item.component';
 
 @NgModule({
   //components / directives that belong to this model
@@ -14,7 +15,8 @@ import { WishFilterComponent } from './wish-filter/wish-filter.component';
     AppComponent,
     WishListComponent,
     AddWishFormComponent,
-    WishFilterComponent
+    WishFilterComponent,
+    WishListItemComponent
   ],
   //things avabile to the templates inside of this module
   imports: [

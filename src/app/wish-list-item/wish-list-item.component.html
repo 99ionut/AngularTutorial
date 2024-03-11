@@ -1,0 +1,10 @@
+<li >
+  <!--data binding [html proprety or attribute]="value"-->
+  <!--event binding have to call a method in the class-->
+  <!--$event to pass event usually (e) in normal js-->
+  <input type="checkbox" 
+  [checked]="fullfilled" 
+  [attr.data-index]="iii"
+  (click)="fullfilledChange()"
+  >{{wishText}}
+</li>

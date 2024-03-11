@@ -12,12 +12,5 @@ export class WishListComponent {
   @Input() wishes : WishItem[] = [];
 
 
-  toggleItem = (e : any, item : WishItem) =>{
-    //binds data by setting isCompleto to true or false
-    item.isComplete = !item.isComplete;
-    console.log(e);
-    console.log(item);
-    console.log("Toggle!");
-  }
 
 }
