@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { WishItem } from '../shared/models/wishItem';
 import { EventService } from "../shared/services/EventService";
 import { WishService } from './wish.service';
+import { catchError } from 'rxjs';
 
 @Component({
   selector: 'app-root',
@@ -11,13 +12,21 @@ import { WishService } from './wish.service';
 export class AppComponent implements OnInit{
 
   ngOnInit(): void {
-    this.wishService.getWishes().subscribe((data: any)=>{
-      console.log(data);
-      this.items = data;
-    })
+    this.wishService.getWishes().subscribe(
+      (data: any)=>{
+        //handle data on success
+        console.log(data);
+        this.items = data;
+      },
+      //second argument handle data on error
+      (error : any)=>{
+        alert(error.message)
+      }
+      
+    )
   }
 
-  items! : WishItem[];
+  items : WishItem[] = [];
 
   title = 'ssswishlist';
 
