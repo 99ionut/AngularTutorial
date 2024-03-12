@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
 import { WishModule } from './wish/wish.module';
+import { ContactModule } from './contact/contact.module';
 
 @NgModule({
   //components / directives that belong to this model
@@ -15,7 +16,8 @@ import { WishModule } from './wish/wish.module';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    WishModule
+    WishModule,
+    ContactModule
   ],
   //objects that can be injected to parts of this model
   providers: [
