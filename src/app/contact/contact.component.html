@@ -5,13 +5,37 @@
   <div>
     <input type="text" formControlName="senderName">name
   </div>
+
+
   <div>
     <input type="text" formControlName="senderEmail">email
+    <div *ngIf="contactForm.get('senderEmail')?.invalid && (contactForm.get('senderEmail')?.dirty || contactForm.get('senderEmail')?.touched)">
+      <div *ngIf="contactForm.get('senderEmail')?.hasError('required')">
+        this is required
+      </div>
+      <div *ngIf="contactForm.get('senderEmail')?.hasError('email')">
+        please enter your correct email address
+      </div>
+    </div>
   </div>
+
+
   <div>
     <textarea formControlName="senderMessage"></textarea>Message
+    <div *ngIf="contactForm.get('senderMessage')?.invalid && (contactForm.get('senderMessage')?.dirty || contactForm.get('senderMessage')?.touched)">
+      <div *ngIf="contactForm.get('senderMessage')?.hasError('required')">
+        this is required
+      </div>
+      <div *ngIf="contactForm.get('senderMessage')?.hasError('minlength')">
+        please enteratleast 10 chars
+      </div>
+    </div>
   </div>
+
+
   <div>
-    <button type="submit">send message</button>
+    <button type="submit" [disabled]="contactForm.invalid">send message</button>
   </div>
+
+
 </form>
