@@ -1,14 +1,17 @@
-<form>
+<form 
+[formGroup]="contactForm"
+(ngSubmit)="$event.preventDefault(); submitForm()"
+>
   <div>
-    <input type="text" [formControl]="senderNameControl">name
+    <input type="text" formControlName="senderName">name
   </div>
   <div>
-    <input type="text" [formControl]="senderEmailControl">email
+    <input type="text" formControlName="senderEmail">email
   </div>
   <div>
-    <textarea [formControl]="senderMessageControl"></textarea>Message
+    <textarea formControlName="senderMessage"></textarea>Message
   </div>
   <div>
-    <button type="submit" (click)="$event.preventDefault(); submitForm()">send message</button>
+    <button type="submit">send message</button>
   </div>
 </form>
