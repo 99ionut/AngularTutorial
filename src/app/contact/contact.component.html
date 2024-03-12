@@ -13,8 +13,8 @@
       <div *ngIf="contactForm.get('senderEmail')?.hasError('required')">
         this is required
       </div>
-      <div *ngIf="contactForm.get('senderEmail')?.hasError('email')">
-        please enter your correct email address
+      <div *ngIf="contactForm.get('senderEmail')?.hasError('invalidEmailDomain')">
+        invalid email domain
       </div>
     </div>
   </div>
