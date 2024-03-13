@@ -1,5 +1,11 @@
 <div style="width:100%; background-color: rgb(144, 224, 224); font-size: 30px; font-weight: bold;">
  Navbar
+ <br>
+ <a routerLink="">Home</a>
+ <br>
+ <a routerLink="second">Second page</a>
+ <br>
+ <button (click)="$event.preventDefault(); goToContact()">Contact</button>
 </div>
 <!--where router output is rendered-->
 <router-outlet />
