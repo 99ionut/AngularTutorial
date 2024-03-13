@@ -18,4 +18,8 @@ export class ProductsService {
     //returns an observable
     return of(this.data);
   }
+
+  getProduct(id: number){
+    return of(this.data.find(p => p.id === id));
+  }
 }

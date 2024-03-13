@@ -5,6 +5,7 @@ import { SecondComponent } from './second/second.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { ContactComponent } from './contact/contact.component';
 import { ProductslistComponent } from './products/productslist/productslist.component';
+import { ProductdetailsComponent } from './products/productdetails/productdetails.component';
 
 //sThe order of this matters!!!! if you put {path: '**', component: NotFoundComponent}, before {path: 'second', component: SecondComponent}, its gonna match '**'
 const routes: Routes = [
@@ -12,7 +13,8 @@ const routes: Routes = [
   {path: 'first', component: FirstComponent},
   {path: 'second', component: SecondComponent},
   {path: 'contact', component: ContactComponent},
-  {path: 'prodcuts', component: ProductslistComponent},
+  {path: 'products', component: ProductslistComponent},
+  {path: 'products/:id', component: ProductdetailsComponent},
   {path: '**', component: NotFoundComponent},
 ];
 
