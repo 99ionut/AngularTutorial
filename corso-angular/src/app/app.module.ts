@@ -6,6 +6,8 @@ import { AppComponent } from './app.component';
 import { ProvaComponent } from './prova/prova.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 
+import { MatSliderModule } from '@angular/material/slider';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -13,7 +15,8 @@ import { provideAnimationsAsync } from '@angular/platform-browser/animations/asy
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    MatSliderModule
   ],
   providers: [
     provideAnimationsAsync()
