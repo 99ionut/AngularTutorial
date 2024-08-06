@@ -8,6 +8,8 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
 export class ProvaComponent implements OnInit, AfterViewChecked, AfterViewInit, AfterContentChecked, AfterContentInit, DoCheck, OnDestroy{
 
 cani = [{nome: 'roger', razza: 'golden', descrizione: 'aaaeqe qweqe q'}]
+
+isDisabled = false
   
 constructor() {
   console.log("construttore");
