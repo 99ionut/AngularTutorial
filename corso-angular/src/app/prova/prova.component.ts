@@ -5,33 +5,28 @@ import { AfterContentChecked, AfterContentInit, AfterViewChecked, AfterViewInit,
   templateUrl: './prova.component.html',
   styleUrl: './prova.component.css'
 })
-export class ProvaComponent implements OnInit, AfterViewChecked, AfterViewInit, AfterContentChecked, AfterContentInit, DoCheck, OnDestroy{
+export class ProvaComponent implements OnInit{
 
 cani = [{nome: 'roger', razza: 'golden', descrizione: 'aaaeqe qweqe q'}]
 
 isDisabled = false
   
+//casting specifico sarebbe piu giusto
+readInput(e: Event){
+  console.log((<HTMLInputElement>e.target).value);
+}
+
+//casting any funziona sempre
+clicked(e: any){
+  console.log("clicked");
+  console.log(e);
+  this.isDisabled = true;
+}
+
 constructor() {
   console.log("construttore");
 }
-  ngAfterViewChecked(): void {
-    console.log("ngAfterViewChecked");
-  }
-  ngAfterViewInit(): void {
-    console.log("ngAfterViewInit");
-  }
-  ngAfterContentChecked(): void {
-    console.log("ngAfterContentChecked");
-  }
-  ngAfterContentInit(): void {
-    console.log("ngAfterContentInit");
-  }
-  ngDoCheck(): void {
-    console.log("ngDoCheck");
-  }
-  ngOnDestroy(): void {
-    console.log("ngOnDestroy");
-  }
+
 
 ngOnInit(): void {
   console.log("ngOnInit");

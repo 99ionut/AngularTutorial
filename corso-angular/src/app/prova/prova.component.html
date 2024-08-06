@@ -1,2 +1,8 @@
-<button mat-stroked-button [disabled]="isDisabled">Basic</button>
-  
+<button mat-stroked-button (click)="clicked(this)" [disabled]="isDisabled">Click</button>
+
+<mat-form-field class="example-full-width">
+    <mat-label>test</mat-label>
+    <input matInput placeholder="input..." (input)="readInput($event)"> 
+  </mat-form-field>
+
+ 
