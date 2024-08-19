@@ -1,1 +1,6 @@
-<app-prova></app-prova>
+<button mat-stroked-button (click)="onClick($event)">Click</button>
+<mat-form-field class="example-full-width">
+    <mat-label>test</mat-label>
+    <input matInput placeholder="input..." [(ngModel)]="title"> 
+  </mat-form-field>
+<p>{{title}}</p>

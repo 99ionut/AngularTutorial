@@ -7,4 +7,13 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'corso-angular';
+
+  onInput(event: Event){
+    this.title = (<HTMLInputElement>event.target).value;
+  }
+
+  onClick(event: Event){
+    this.title = "btn cliccato";
+  }
+
 }
